@@ -35,8 +35,26 @@ public class RoupasDAO implements Produto {
     }
 
     @Override
-    public void adicionar() {
-
+    public void adicionar(Roupa roupa) {
+        java.sql.Connection conn = null;
+        if (roupa != null) {
+            try {
+                conn = Connection.getConnection();
+                PreparedStatement ps = conn.prepareStatement("INSERT INTO roupas (id ,nome, modelo, preco, quantidade) " +
+                        "VALUES (? ,?, ?, ?, ?)" );
+                ps.setInt(1, roupa.getId());
+                ps.setString(2, roupa.getNome());
+                ps.setString(3, roupa.getModelo());
+                ps.setDouble(4, roupa.getPreco());
+                ps.setInt(5, roupa.getQuantidade());
+                ps.executeUpdate();
+                ps.close();
+            } catch (Exception e) {
+                e.getMessage();
+            } finally {
+                Connection.closeConnection(conn);
+            }
+        }
     }
 
     @Override

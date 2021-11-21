@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface Produto {
     List<Roupa> listar();
-    void adicionar();
+    void adicionar(Roupa roupa);
     void remover();
     Roupa pesquisar(String nome);
 }

@@ -12,12 +12,15 @@ public class RoupasControl {
 
 
     RoupasDAO control = new RoupasDAO();
-    ObservableList roupas = FXCollections.observableArrayList();
+
+    public void Adicionar(Roupa roupa) {
+        if (roupa != null) {
+            control.adicionar(roupa);
+        }
+    }
 
     public List<Roupa> pesquisar() {
-        List<Roupa> list = control.listar();
-        roupas.addAll(list);
-        return roupas;
+        return null;
     }
 
     public Roupa pesquisarPorNome(String nome) {
