@@ -1,0 +1,15 @@
+CREATE database loja;
+USE loja;
+
+CREATE table roupas (
+id int NOT NULL AUTO_INCREMENT,
+nome varchar(50),
+modelo varchar(25),
+preco double,
+quantidade int,
+
+PRIMARY KEY(id)
+);
+
+INSERT INTO roupas (id, nome, modelo, preco, quantidade)
+VALUES (1, 'Blusa manga longa', 'Manga Longa', '24.90', 5);

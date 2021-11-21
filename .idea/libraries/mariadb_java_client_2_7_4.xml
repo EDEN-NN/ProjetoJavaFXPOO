@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="mariadb-java-client-2.7.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/mariadb-java-client-2.7.4.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/javafx-sdk-11.0.2/lib" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.25.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib/javafx-sdk-11.0.2/lib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/lib/javafx-sdk-11.0.2/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>
