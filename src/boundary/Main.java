@@ -53,11 +53,11 @@ public class Main extends Application {
         btnAdicionar.setOnAction((e) -> {
             if(txtId != null) {
                 Roupa roupa = new Roupa();
-                roupa.setId(Integer.parseInt(txtId.getText()));
-                roupa.setNome(txtNome.getText());
-                roupa.setModelo(txtModelo.getText());
-                roupa.setPreco(Double.parseDouble(txtPreco.getText()));
-                roupa.setQuantidade(Integer.parseInt(txtQuantidade.getText()));
+//                roupa.setId(Integer.parseInt(txtId.getText()));
+//                roupa.setNome(txtNome.getText());
+//                roupa.setModelo(txtModelo.getText());
+//                roupa.setPreco(Double.parseDouble(txtPreco.getText()));
+//                roupa.setQuantidade(Integer.parseInt(txtQuantidade.getText()));
                 control.Adicionar(roupa);
                 limpar();
                 new Alert(Alert.AlertType.INFORMATION, "Roupa salva com sucesso").showAndWait();
@@ -75,10 +75,10 @@ public class Main extends Application {
     public void toBoundary(Roupa roupa) {
         if (roupa != null) {
             txtId.setText(String.valueOf(roupa.getId()));
-            txtNome.setText(roupa.getNome());
-            txtModelo.setText(roupa.getModelo());
-            txtPreco.setText(String.valueOf(roupa.getPreco()));
-            txtQuantidade.setText(String.valueOf(roupa.getQuantidade()));
+//            txtNome.setText(roupa.getNome());
+//            txtModelo.setText(roupa.getModelo());
+//            txtPreco.setText(String.valueOf(roupa.getPreco()));
+//            txtQuantidade.setText(String.valueOf(roupa.getQuantidade()));
         }
     }
 

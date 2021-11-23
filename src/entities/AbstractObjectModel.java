@@ -2,17 +2,17 @@ package entities;
 
 import java.time.LocalDate;
 
-public abstract class AbstractObjectModel<T> {
-    private T id;
+public abstract class AbstractObjectModel<TId> {
+    private TId id;
     private LocalDate inserted;
     private LocalDate updated;
     private LocalDate deleted;
 
-    public T getId() {
+    public TId getId() {
         return id;
     }
 
-    public void setId(T id) {
+    public void setId(TId id) {
         this.id = id;
     }
 
