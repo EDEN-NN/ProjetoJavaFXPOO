@@ -13,7 +13,7 @@ public class Connection {
             String path = "jdbc:mysql://" + server + ":3306/" + database;
             Class.forName("com.mysql.cj.jdbc.Driver");
             java.sql.Connection conn = DriverManager.getConnection(path, username, password);
-            System.out.println("Conectado!");
+            //System.out.println("Conectado!");
             return conn;
         } catch(Exception e) {
             System.err.println(e.getMessage() + "/n/n" + e.getStackTrace());

@@ -8,6 +8,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="file://$PROJECT_DIR$/lib/javafx-sdk-11.0.2/lib" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/mysql-connector-java-8.0.25-sources.jar!/" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/lib/javafx-sdk-11.0.2/lib" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/lib/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
