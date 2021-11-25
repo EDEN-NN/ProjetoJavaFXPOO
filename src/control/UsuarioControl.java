@@ -9,19 +9,12 @@ public class UsuarioControl {
 
     public Usuario login(Usuario user){
         user.setPassword(Extensions.getHashMd5(user.getPassword()));
-        var result = dao.login(user);
-
-        return result;
+        return dao.login(user);
     }
 
-    public String signup(Usuario user){
+    public boolean signup(Usuario user){
         user.setPassword(Extensions.getHashMd5(user.getPassword()));
-        var result = dao.signup(user);
-
-        if(result)
-            return "Login realizado com sucesso!";
-
-        return "Email e/ou senha incorreta!";
+        return dao.signup(user);
     }
 
 }

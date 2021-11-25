@@ -94,7 +94,7 @@ CREATE TABLE `rafalojas`.`produto` (
 CREATE TABLE `rafalojas`.`estoque` (
   `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_produto` INTEGER UNSIGNED NOT NULL,
-  `preco` DECIMAL UNSIGNED NOT NULL,
+  `preco` DECIMAL(10,2) UNSIGNED NOT NULL,
   `quantidade` INTEGER UNSIGNED NOT NULL,
   `inserted` DATETIME NOT NULL,
   `updated` DATETIME,
@@ -117,8 +117,8 @@ CREATE TABLE `rafalojas`.`forma_pagamento` (
 
 CREATE TABLE `rafalojas`.`venda` (
   `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  `total` DECIMAL UNSIGNED NOT NULL,
-  `frete` DECIMAL UNSIGNED NOT NULL,
+  `total` DECIMAL(10,2) UNSIGNED NOT NULL,
+  `frete` DECIMAL(10,2) UNSIGNED NOT NULL,
   `id_forma_pagamento` INTEGER UNSIGNED NOT NULL,
   `id_usuario` INTEGER UNSIGNED NOT NULL,
   `id_endereco` INTEGER UNSIGNED NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE `rafalojas`.`venda_produtos` (
   `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_produto` INTEGER UNSIGNED NOT NULL,
   `id_venda` INTEGER UNSIGNED NOT NULL,
-  `preco_unitario` DECIMAL UNSIGNED NOT NULL,
+  `preco_unitario` DECIMAL(10,2) UNSIGNED NOT NULL,
   `inserted` DATETIME NOT NULL,
   `updated` DATETIME,
   `deleted` DATETIME,
