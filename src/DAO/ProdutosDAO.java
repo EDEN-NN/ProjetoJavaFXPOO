@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProdutosDAO implements IProduto<Produto>{
+public class ProdutosDAO implements IProdutosDAO<Produto> {
 
     @Override
     public List<Produto> pesquisar(String search) {

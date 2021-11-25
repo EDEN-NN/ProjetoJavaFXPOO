@@ -1,7 +1,6 @@
 package DAO;
 
 import entities.Endereco;
-import entities.Produto;
 import entities.Telefone;
 import entities.Usuario;
 
@@ -12,7 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsuarioDAO implements IUsuario{
+public class UsuarioDAO implements IUsuarioDAO {
 
     @Override
     public Usuario login(Usuario user) {
