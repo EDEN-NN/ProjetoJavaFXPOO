@@ -1,0 +1,1 @@
+ALTER TABLE `rafalojas`.`estoque` MODIFY COLUMN `preco` DECIMAL(10,2) NOT NULL;
