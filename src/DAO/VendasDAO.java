@@ -5,7 +5,7 @@ import entities.Venda;
 
 import java.util.List;
 
-public class VendasDAO implements IVenda{
+public class VendasDAO implements IVendasDAO {
 
     @Override
     public boolean realizarCompra(Venda venda) {

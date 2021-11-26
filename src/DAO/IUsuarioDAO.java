@@ -6,7 +6,7 @@ import entities.Usuario;
 
 import java.util.List;
 
-public interface IUsuario {
+public interface IUsuarioDAO {
     public Usuario login(Usuario user);
     public boolean signup(Usuario user);
     public boolean cadastrarEndereco(Usuario user, Endereco endereco);
