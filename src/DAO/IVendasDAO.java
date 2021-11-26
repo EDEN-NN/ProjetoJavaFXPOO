@@ -1,13 +1,12 @@
 package DAO;
 
-import entities.Usuario;
-import entities.Venda;
+import entities.*;
 
 import java.util.List;
 
 public interface IVendasDAO {
 
-    public boolean realizarCompra(Venda venda);
+    public boolean realizarCompra(Carrinho carrinho, Usuario user, Endereco endereco, FormaPagamento formaPagamento);
     public List<Venda> listarVendas(Usuario user);
 
 }
