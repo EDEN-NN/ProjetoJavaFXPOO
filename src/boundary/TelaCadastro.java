@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class TelaCadastro {
+public class TelaCadastro extends Boundary{
 
     UsuarioControl userControl = new UsuarioControl();
 
@@ -25,6 +25,7 @@ public class TelaCadastro {
     DatePicker birthDate = new DatePicker();
     Button btnCreate = new Button("Criar Conta");
 
+    @Override
     public Pane render() {
         GridPane pane = new GridPane();
 
@@ -53,8 +54,18 @@ public class TelaCadastro {
 
             userControl.signup(usuario);
             new Alert(Alert.AlertType.INFORMATION, "Usuário salvo com sucesso").showAndWait();
+            clear();
         });
 
         return pane;
     }
+
+    private void clear() {
+        txtName.setText("");
+        txtLastName.setText("");
+        txtPassword.setText("");
+        txtCpf.setText("");
+        txtEmail.setText("");
+    }
+
 }
