@@ -9,6 +9,15 @@ public class Venda extends AbstractObjectModel<Integer>{
     private FormaPagamento formaPagamento;
     private double frete;
     private Endereco entrega;
+    private Usuario comprador;
+
+    public Usuario getComprador() {
+        return comprador;
+    }
+
+    public void setComprador(Usuario comprador) {
+        this.comprador = comprador;
+    }
 
     public List<Produto> getProdutos() {
         return produtos;
