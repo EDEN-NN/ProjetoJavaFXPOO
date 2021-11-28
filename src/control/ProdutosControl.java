@@ -10,7 +10,9 @@ public class ProdutosControl {
     ProdutosDAO dao = new ProdutosDAO();
 
     public List<Produto> pesquisar(String search){
-
+        if (search == null) {
+            return dao.pesquisar("");
+        }
         return dao.pesquisar(search);
     }
 

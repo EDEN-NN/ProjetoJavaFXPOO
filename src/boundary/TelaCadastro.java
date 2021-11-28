@@ -12,10 +12,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 public class TelaCadastro extends Boundary{
 
     UsuarioControl userControl = new UsuarioControl();
+
 
     TextField txtName = new TextField();
     TextField txtPassword = new TextField();
@@ -24,10 +26,13 @@ public class TelaCadastro extends Boundary{
     TextField txtEmail = new TextField();
     DatePicker birthDate = new DatePicker();
     Button btnCreate = new Button("Criar Conta");
+    Button btnLogin = new Button("Login");
 
     @Override
-    public Pane render() {
+    public void render() {
         GridPane pane = new GridPane();
+        Stage window = new Stage();
+        Scene scene = new Scene(pane, 300, 400);
 
         pane.add(new Label("Username"), 0, 0);
         pane.add(txtName, 1,0);
@@ -42,6 +47,7 @@ public class TelaCadastro extends Boundary{
         pane.add(new Label("Birthdate"), 0, 5);
         pane.add(birthDate, 1, 5);
         pane.add(btnCreate, 0, 6);
+        pane.add(btnLogin, 0, 7);
 
         btnCreate.setOnAction((e) -> {
             Usuario usuario = new Usuario();
@@ -54,18 +60,22 @@ public class TelaCadastro extends Boundary{
 
             userControl.signup(usuario);
             new Alert(Alert.AlertType.INFORMATION, "Usuário salvo com sucesso").showAndWait();
-            clear();
+            TelaLogin login = new TelaLogin();
+            login.render();
+            window.close();
         });
 
-        return pane;
+        btnLogin.setOnAction((e) -> {
+            TelaLogin login = new TelaLogin();
+            login.render();
+            window.close();
+        });
+
+        window.setTitle("CADASTRO");
+        window.setScene(scene);
+        window.show();
+
     }
 
-    private void clear() {
-        txtName.setText("");
-        txtLastName.setText("");
-        txtPassword.setText("");
-        txtCpf.setText("");
-        txtEmail.setText("");
-    }
 
 }

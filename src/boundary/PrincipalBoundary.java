@@ -6,11 +6,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class PrincipalBoundary extends Application implements IExecutorComandos {
+public class PrincipalBoundary extends Application{
 
+    Stage window = new Stage();
     TelaLogin login = new TelaLogin();
     TelaCadastro cadastro = new TelaCadastro();
 
@@ -20,6 +20,7 @@ public class PrincipalBoundary extends Application implements IExecutorComandos 
 
     @Override
     public void start(Stage stage) throws Exception {
+        window = stage;
         GridPane pane = new GridPane();
         Scene scene = new Scene(pane, 250, 250);
 
@@ -35,36 +36,20 @@ public class PrincipalBoundary extends Application implements IExecutorComandos 
         pane.add(btnCadastro, 2, 3);
 
         btnLogin.setOnAction((e) -> {
-            executarComandos("login");
+            login.render();
+            window.close();
         });
 
         btnCadastro.setOnAction((e) -> {
-            executarComandos("cadastro");
+            cadastro.render();
+            window.close();
         });
 
-        stage.setTitle("Tela Inicial");
-        stage.setScene(scene);
-        stage.show();
+        window.setTitle("Tela Inicial");
+       window.setScene(scene);
+        window.show();
 
     }
 
-    @Override
-    public void executarComandos(String comandos) {
-        if (comandos.contains("login")) {
-           Pane pane = login.render();
-           Scene scene = new Scene(pane, 300,300);
-           Stage stage = new Stage();
-           stage.setTitle("Login");
-           stage.setScene(scene);
-           stage.show();
-        } else if (comandos.contains("cadastro")) {
-            Pane pane = cadastro.render();
-            Scene scene = new Scene(pane, 300,300);
-            Stage stage = new Stage();
-            stage.setTitle("Cadastro");
-            stage.setScene(scene);
-            stage.show();
-        }
-    }
 
 }

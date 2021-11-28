@@ -21,11 +21,11 @@ public class ProdutosDAO implements IProdutosDAO<Produto> {
                     "  INNER JOIN produto ON estoque.id_produto = produto.id\n" +
                     "  INNER JOIN marca ON produto.id_marca = marca.id\n" +
                     "  INNER JOIN categoria ON produto.id_categoria = categoria.id\n" +
-                    "  WHERE produto.nome LIKE '%?%' OR produto.descricao LIKE '%?%'";
+                    "  WHERE produto.nome LIKE ? OR produto.descricao LIKE ?";
             conn = Connection.getConnection();
             PreparedStatement pstm = conn.prepareStatement(sql);
-            pstm.setString(1, search);
-            pstm.setString(2, search);
+            pstm.setString(1, "%" + search + "%");
+            pstm.setString(2, "%" + search + "%");
 
             ResultSet rs = pstm.executeQuery();
 
