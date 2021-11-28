@@ -3,6 +3,8 @@ package control;
 import DAO.VendasDAO;
 import entities.*;
 
+import java.util.List;
+
 public class VendasControl {
 
     private VendasDAO dao = new VendasDAO();
@@ -20,8 +22,11 @@ public class VendasControl {
         return dao.realizarCompra(v);
     }
 
-    public void listarCompras(){
+    public List<Venda> listarCompras(Usuario user){
+        if(user!=null)
+            return dao.listarVendas(user);
 
+        return null;
     }
 
 }
