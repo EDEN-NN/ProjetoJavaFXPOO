@@ -20,7 +20,7 @@ public class TelaCadastro extends Boundary{
 
 
     TextField txtName = new TextField();
-    TextField txtPassword = new TextField();
+    PasswordField txtPassword = new PasswordField();
     TextField txtCpf = new TextField();
     TextField txtLastName = new TextField();
     TextField txtEmail = new TextField();
@@ -34,7 +34,7 @@ public class TelaCadastro extends Boundary{
         Stage window = new Stage();
         Scene scene = new Scene(pane, 300, 400);
 
-        pane.add(new Label("Username"), 0, 0);
+        pane.add(new Label("Name"), 0, 0);
         pane.add(txtName, 1,0);
         pane.add(new Label("Last name"), 0, 1);
         pane.add(txtLastName, 1, 1);

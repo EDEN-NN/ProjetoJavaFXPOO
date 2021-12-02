@@ -37,7 +37,7 @@ public class HomeBoundary extends Boundary{
     TextField txtSearch = new TextField();
     Button btnRemove = new Button("Remover");
     Button btnList = new Button("Listar Carrinho");
-    Button btnComprar = new Button("Fechar Compra");
+  //  Button btnComprar = new Button("Fechar Compra");
 
     @Override
     public void render() {
@@ -49,7 +49,7 @@ public class HomeBoundary extends Boundary{
         box.setPadding(new Insets(10, 10, 10,10));
         box.setSpacing(10);
         txtSearch.setPromptText("ID do produto");
-        box.getChildren().addAll(txtSearch, btnAdd, btnRemove, btnList, btnComprar);
+        box.getChildren().addAll(txtSearch, btnAdd, btnRemove, btnList);
 
         pane.getChildren().addAll(txtProduct, btnPesquisar);
         TableView<Produto> table = new TableView<>();
@@ -108,11 +108,11 @@ public class HomeBoundary extends Boundary{
             txtProduct.clear();
         });
 
-        btnComprar.setOnAction((e) -> {
-            VendasBoundary vendas = new VendasBoundary(user);
-            vendas.render();
-            window.close();
-        });
+//        btnComprar.setOnAction((e) -> {
+//            VendasBoundary vendas = new VendasBoundary(user);
+//            vendas.render();
+//            window.close();
+//        });
 
         window.setTitle("HOME");
         window.setScene(scene);
